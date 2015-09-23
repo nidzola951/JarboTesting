@@ -1,128 +1,156 @@
----
-layout: index
----
+Process document at Jarboo
+--------------------------
 
+**[J]arboo info**
 
-# docsync
+- Definitions and practical
+     - [J_1.1 - Terms and words](J_1.1 - Terms and words.md)
 
-This is an example project demonstrating how to setup an easy configuration for
-keeping your `README.md` automatically synced with a GitHub Pages project
-page created using [**one of the great layouts**][1] available when using
-[**GitHub's Automatic Page Generator**][2].
+- Jarboo proces
+	 - [J_20.1 - What is Jarboo Proces](J_20.1 - What is Jarboo Proces.md)
+	 - [J_20.2 - How to modify Jarboo Process](J_20.2 - How to modify Jarboo Process.md)
 
-## Background
+**[C]ustomers lifecycle** 
+All documents regarding customers are prepended C_, example C_4.1 Tasks. 
 
-If you haven't set up a project page for your GitHub repository yet, then you
-can do so by following the [**instructions found here**][3]. GitHub will provide
-a great feature and just before you pick your layout it will give you the chance
-to load in your `README.md` for your master branch and edit it before using it
-as the content in the layout. The problem I had with this in my project's is
-that I wanted to use the `README.md` from my master branch, but I also wanted
-it so the project page to stay updated and in sync with the `README.md` 
-automatically.
+ - Customer lifecycle
+	 - [C_1.0 - Description of customer lifecycle](C_1.0-Description of customer lifecycle.md)
+ - Leads
+	 - C_: Registering a new lead
+	 - C_: Follow-up on a lead
+ - Opportunities
+	 - C_: Converting a lead into an opportunity 
+	 - C_: Follow-up on an opportunity
+ - Project
+ 	 - Project types
+ 	 	 - [C_15.1.1 - Overview of project types](C_15.1.1 - Overview of project types.md)
+ 	 	 - [C_15.1.2 - Jarboo Consulting](C_15.1.2 - Jarboo Consulting.md)
+		 - [C_15.1.3 - Jarboo Development](C_15.1.3 - Jarboo Development.md)
+		 - [C_15.1.4 - Jarboo Deployment](C_15.1.4 - Jarboo Deployment.md)
+		 - [C_15.1.5 - Jarboo Maintenance](C_15.1.5 - Jarboo Maintenance.md)
+	 - Starting up a new project
+		 - Contracts
+	     	-	[Contract for projects](C_20.1.1.1 - Contract for projects.md)
+	     	-	[Contract for contious development](C_20.1.1.2 - Contract for contious development.md)
+	      - [Risk analysis](C_20.2.1 - Risk analysis.md)
+	      - Setup the team
+	  	     - [C_15.2.1 - How to setup a team](C_15.2.1 - How to setup a team.md)
+	  	     - [C_15.2.2 - The team database](https://docs.google.com/spreadsheets/d/1iMBE4RDVq6SeZAGZ268X_FbVldlyAxSb5JGh0cn6H-4/edit#gid=225165076)
+     - Maintenance
+		 - Contracts
+	     	-	[C_20.1.1 - Contract for Jarboo maintenance](C_20.1.1 - Contract for maintenance.md)
+	 - Start working on a project
+	  	 - [C_20.1.1 - Checklist on starting working on a project](C_20.1.1 - Checklist on starting working on a project.md)
+	  	 - [C_20.2.1 - Setup new resource in Jira](C_20.2.1 - Setup new resource in Jira.md)
+ - Tasks
+	 - [C_25.1.1 - Task lifecycle](C_25.1.1 - Task lifecycle.md)
+	 - Estimation
+	 	- [C_25.2.1 - How and when to estimate?](C_25.2.1 - How and when to estimate.md)
+	 	- [C_25.2.2 - Estimation templates](C_25.2.2 - Estimation templates.md)
+	 - Assigning people
+	 - Phases
+	 	- New tasks [not ready to estimate]
+	 	- New tasks [ready to estimate]
+	 		- [C_25.4.2.1 - Template](https://trello.com/c/mqQGMdiO/11-template)
+	 	- Discussion, questions and pending estimates
+	 	- Spec [project manager]
+	 		- [C_25.4.3.1 - Template](https://trello.com/c/2puSnp95/2-template)
+	 	- Architecture [architect]
+	 		- [C_25.4.4.1 - Template](https://trello.com/c/nMTuK7hV/1-template)
+	 	- Development [developer]
+	 		- [C_25.4.5.1 - Template](https://trello.com/c/TG2szRlA/3-template)
+	 	- In progress [developer]
+	 	- Code review [reviewer]
+	 		- [C_25.4.7.1 - Template](https://trello.com/c/UvsbU5WE/4-template)
+	 	- In test [tester]
+	 		- [C_25.4.8.1 - Template](https://trello.com/c/QvyoHh0N/5-template)
+	 	- Customer verify [customer]
+	 	- Done
+ - Deployment and releases
+ 	- [C_30.1.1 - How we deploy](C_30.1.1 - How we deploy.md)
+ - Standard tasks
+ 	 - New customer
+ 	     - [C_40.1.1 - Migrate code into cloud](C_40.1.1 - Migrate code into cloud.md)
+ 	     - [C_40.1.2 - Test server](C_40.1.2 - Test server.md)
+ 	     - [C_40.1.3 - Backup setup](C_40.1.3 - Backup setup.md)
+ - Release
 
-## Relative Links
-
- - Here is a [**relative link to a doc file**][7] which should work on project
-   page as well. 
- - Here is [**another relative link to a doc**][8].
- - Check out the [**GitHub Flavored Markup doc**][5] which shows off the
-   markup that will work if using the `markup: redcarpet` option in
-   `_config.yml`.
-
-## How to Easily Sync README.md to Project Page
-
-This project contains a bash script which is used in your project as a 
-[**git hook**][4]. Git has support for scripts to hook into and execute when
-certain actions are taken on a local git repository. If you create a bash
-script named `post-commit` and place it in the directory `.git/hooks/`
-within your local repository, it will then be executed after every committ to
-that repository.
-
-The `post-commit` script contained in this project is a bash script so you
-will need bash it in your path. If you are running Git on Windows, this is in
-`bin` subdirectory within your Git program files directory. In order to use the
-`post-commit` script here you must already have a project page created with
-one of the layouts using the Automatic Page Generator and have set it up using
-the following instructions:
-
- * If you already have a gh-pages branch, create a backup in case you botch 
-    this setup.
+**[W]orkflow**
  
- * If you don't already have a gh-pages branch go to your repostory page's
-    Settings tab and use the [**Automatic Page Generator**][2] to create
-    it.
+ - A new resource
+	 - [F_15.1.1 - Introduction to Jarboo](F_15.1.1 - Introduction to Jarboo.md)
+	 - Introduction to workflow
+	 - Introduction to project
+	 - Introduction to subversion flow
+ - [F_20.1 Roles - Jarboo Roles](F_20.1 Roles - Jarboo Roles.md)
+     - Project managers
+         - [F_20.2.1 - Description of a project manager](F_20.2.1 - Description of a project manager.md)
+     - Architects
+     	- [F_20.2.2 - Description of an architect](F_20.2.2 - Description of an architect.md)
+ 	 - Developer
+ 	 	- [F_20.2.3 - Description of a developer](F_20.2.3 - Description of a developer.md)
+ 	 - Code reviewer
+ 	 	- [F_20.2.4 - Description of a code reviewer](F_20.2.4 - Description of a code reviewer.md)
+	 - Tester
+	 	- [F_20.2.5 - Description of a tester](F_20.2.5 - Description of a tester.md)
+ - Running project
+ 	  - Follow-ups
+ 	  	- [W_30.1.1 - Followup for projectt managers](W_30.1.1 - Followup for projectt managers.md)
+ 	  - Architects, developers, code reviewers and testers
+ - Resource planning
 
- * Change to your local repostory's directory and checkout the `gh-pages`
-    branch.
+**Finding [F]reelancers**
 
- * Create a new file called `_config.yml` this is a file that will tell
-    jekyll how to build our site when it is pushed to GitHub Pages. Put the
-    following lines in the file
-
-    ```
-    markdown: redcarpet
-    path: http://yourusername.github.io/reponame
-    ```
-
- * The above will simply tell jekyll to use the redcarpet style markdown which
-   means it will be parsed in the same way that GitHub does for their repo
-   pages. Also we are creating a global variable for the site called `path`.
-   This variable will be accessible from `site.path`.
-
- * Copy the process-rel-links.js file from the docsync directory to your
-   gh-pages `javascripts` directory.
-
- * Create the directory `_layouts` within your gh-pages branch if it is not
-   and move `index.html` to the new `_layouts` directory. 
-
- * Open up `index.html` and locate the HTML from the rendered markdown in your
-   `README.md` file. This is usually between between `<section>` or
-   `<article>` tags. Delete this text and replace it with the text 
-   `{{ content }}`.
-
- * Before closing `index.html`, you also need to locate the CSS from your
-   project page theme (should be a file in the `stylesheets` directory). You
-   need to prefix this and any other assets loaded from your site in this
-   HTML with `{{ site.path }}`.
-
-   For me this was a line towards the top:
-
-    ```
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    ```
-
-   Which needed to be changed to
-
-    ```
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ site.path }}/stylesheets/stylesheet.css">`
-    ```
- 
- * Add the following lines to your `index.html` file. The first line for
-   jQuery is only needed if jQuery is not already included in your layout's
-   `index.html` already.
-
-    ```
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="{{site.path}}/javascripts/process-rel-links.js" type="text/javascript"></script>`
-    ```
-
- * Add and commit changes to `gh-pages`, and switch to `master` branch. Copy
-   the `post-commit` script found here in [**CoryG89/docsync**][1] to your 
-   local repository's `.git/hooks` directory.
+ - [F_1.0 - Description of freelancer lifecycle](F_1.0-Description of freelancer lifecycle.md)
+ - Finding a resource
+ 	- Where to find new resources?
+ 		- [F_5.1.1 - Platforms we look for new talent](F_5.1.1 - Platforms we look for new talent.md)
+ 		- [F_5.1.2 - Upwork job template](F_5.1.2 - Upwork job template.md)
+ 	- Selection of a resource
+ 		- Messages for new freelancers
+ 			- [F_5.2.1.1 - Interview](F_5.2.1.1 - Interview.md)
+ 			- Android
+ 			- [F_5.2.1.4 - Django](F_5.2.1.4 - Django.md)
+ 			- [F_5.2.1.5 - ASP.NET MVC](F_5.2.1.5 - ASPnet mvc.md)
+			- iOS 
+			- Joomla
+			- PHP
+ 			- Ruby on Rails
+ 			- [F_5.2.1.6 - Wordpress](F_5.2.1.6 - Wordpress.md)
+ 		- [F_5.2.2.1 - Criteria for selecting a freelancer](F_5.2.2.1 - Criteria for selecting a freelancer.md)
+ - Verify freelancer
+    - [F_10.1.1 - Testing a new freelancer](F_10.1.1 - Testing a new freelancer.md)
 
 
-That's it, now whenever you make a commit to the `master` branch, the
-`README.md` file and all the markdown in the `docs` directory of your master
-branch will be synced up with the will automatically be synced to your
-project page.
+**Finding [E]mployees**
 
-[1]: https://github.com/blog/1081-instantly-beautiful-project-pages
-[2]: https://help.github.com/articles/creating-pages-with-the-automatic-generator
-[3]: https://help.github.com/articles/creating-pages-with-the-automatic-generator#the-automatic-page-generator
-[4]: http://git-scm.com/book/en/Customizing-Git-Git-Hooks
-[5]: docs/gfm.md
-[6]: docs/source.txt
-[7]: docs/other.md
-[8]: docs/another.md
-[9]: docs/gfm.md
+- Description of an employee lifecycle
+- New employee
+	- [E_5.1.1 - Checklists for sales and project managers](E_5.1.1 - Checklists for sales and project managers.md)
+- Contracts
+	- Contract for project workers
+		- [E_10.1.1 - Contract for Danish hires](https://docs.google.com/a/jarboo.com/document/d/1s3Z1ZG86yH89LhQuEiJuHaGbN-sfgZ-GfGQHZnUkPtw/edit?usp=sharing)
+		- Contract for International hires
+	- Contract for regular employees
+		- Contract for Danish hires
+		- Contract for International hires
+
+**Jarboo [A]cademy**
+
+- Introduction
+- Jarboo flow
+	- Registering time
+	- Availability
+- [Git and Sourcetree](A_15.1 - Git intro.md)
+	- [A_15.1.1 - Git flow](A_15.1.1 - Git flow.md)
+	- [A_15.1.2 - Git releases](A_15.1.2 - Releases.md)
+- Role specific
+     - Project managers
+     - Architects
+     - Developers
+     	- [A_20.3.3 - Miscellaneous](A_20.3.3 - Miscellaneous.md)
+     - Code reviewers
+     - Testers
+     - [Test](test.md)
+
+	 	
