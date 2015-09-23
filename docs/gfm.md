@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+---
+layout: index
+---
+
+
+>>>>>>> 8427a68e1658d2cdfdc12fd27adf3d7c6e1d7327
 GitHub Flavored Markdown
 ================================
 
